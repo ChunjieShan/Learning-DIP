@@ -19,8 +19,6 @@ BackProjection::BackProjection(cv::Mat& image, cv::Mat& modelImg)
 
     modelHist.calcGrayHist(mModelImg);
     mModelHistogram = modelHist.getVectorHistogram();
-
-    std::cout << "========================\n";
 }
 
 int BackProjection::calcBackProject()
@@ -34,6 +32,10 @@ int BackProjection::calcBackProject()
         }
     }
 
+    std::cout << "Saving result...\n";
     cv::imwrite("../result.png", mResultImg);
+
+    std::cout << "Saved result to ../result.png\n";
+
     return 1;
 }
