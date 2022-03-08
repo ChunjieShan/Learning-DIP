@@ -4,7 +4,7 @@
 
 #include "sobel.h"
 
-Sobel::Sobel(cv::Mat& src, int gx, int gy, int kernelSize)
+Sobel::Sobel(cv::Mat& src, cv::Mat& dst, int gx, int gy, int kernelSize)
     : mSrc(src)
     , mGx(gx)
     , mGy(gy)
@@ -15,8 +15,9 @@ Sobel::Sobel(cv::Mat& src, int gx, int gy, int kernelSize)
     , mGyFilter(cv::Mat::zeros(cv::Size(kernelSize, kernelSize), CV_8SC1))
 {
     genGxGyKernel();
-
     calcSobel();
+
+    dst = getResult();
 }
 
 int Sobel::calcSobel()
@@ -52,8 +53,9 @@ int Sobel::calcGxSobel()
 
             mGxResult.at<char>(row, col) = gx;
         }
-
     }
+
+    mGxResult.convertTo(mGxResult, CV_8UC1);
 
     return 0;
 }
@@ -75,10 +77,11 @@ int Sobel::calcGySobel()
                 }
             }
 
-            mGxResult.at<char>(row, col) = gy;
+            mGyResult.at<char>(row, col) = gy;
         }
-
     }
+
+    mGyResult.convertTo(mGyResult, CV_8UC1);
     return 0;
 }
 
@@ -108,7 +111,7 @@ int Sobel::calcGxGySobel()
     }
 
     cv::addWeighted(mGxResult, 0.5, mGyResult, 0.5, 0, mGxGyResult);
-    cv::imwrite("../resultxy.png", mGxGyResult);
+    mGxGyResult.convertTo(mGxGyResult, CV_8UC1);
 
     return 0;
 }
@@ -130,3 +133,14 @@ int Sobel::genGxGyKernel()
     return 0;
 }
 
+cv::Mat Sobel::getResult()
+{
+    if (mGx && !mGy)
+        return mGxResult;
+
+    else if (!mGx && mGy)
+        return mGyResult;
+
+    else if (mGx && mGy)
+        return mGxGyResult;
+}

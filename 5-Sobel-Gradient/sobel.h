@@ -11,7 +11,7 @@
 class Sobel
 {
 public:
-    Sobel(cv::Mat& src, int gx, int gy, int kernelSize);
+    Sobel(cv::Mat& src, cv::Mat& dst, int gx, int gy, int kernelSize);
 
 private:
     cv::Mat mSrc;
@@ -27,10 +27,13 @@ private:
     int mKernelSize;
 
     int genGxGyKernel();
+
     int calcSobel();
     int calcGxSobel();
     int calcGySobel();
     int calcGxGySobel();
+
+    cv::Mat getResult();
 };
 
 
