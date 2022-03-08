@@ -23,10 +23,14 @@ private:
 
     cv::Mat mGxResult;
     cv::Mat mGyResult;
+    cv::Mat mGxGyResult;
     int mKernelSize;
 
     int genGxGyKernel();
     int calcSobel();
+    int calcGxSobel();
+    int calcGySobel();
+    int calcGxGySobel();
 };
 
 
