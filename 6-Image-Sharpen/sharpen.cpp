@@ -36,12 +36,6 @@ int Sharpen::calcSharpen(cv::Mat &src, cv::Mat& dst)
                  for (int j = -kW; j <= kW; j++)
                  {
                      sum += src.at<int>(row + i, col + j) * mKernel.at<int>(i + kH, j + kW);
-//                     std::cout << "i = \t" << i << std::endl;
-//                     std::cout << "j = \t" << j << std::endl;
-//                     std::cout << "src = \t" << src.at<int>(row + i, col + j) << std::endl;
-//                     std::cout << "kernel = \t" << mKernel.at<int>(kH + i, kW + j) << std::endl;
-//                     std::cout << "sum = \t" << sum << std::endl;
-//                     std::cout << "\n";
                  }
              }
 
