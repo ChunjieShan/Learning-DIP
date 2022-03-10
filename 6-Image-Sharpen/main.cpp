@@ -6,5 +6,8 @@
 
 int main()
 {
+    cv::Mat img = cv::imread("../../image.png", cv::IMREAD_GRAYSCALE);
+    cv::Mat dst;
+    Sharpen sharpen(img, dst);
     return 0;
 }

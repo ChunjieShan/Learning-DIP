@@ -11,8 +11,12 @@
 class Sharpen
 {
 public:
-    Sharpen();
+    Sharpen(cv::Mat& img, cv::Mat& dst);
+    int calcSharpen(cv::Mat& src, cv::Mat& dst);
 
+private:
+    cv::Mat mKernel;
+    cv::Mat mSrc;
 };
 
 
