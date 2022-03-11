@@ -4,7 +4,7 @@
 
 #include "sharpen.h"
 
-Sharpen::Sharpen(cv::Mat &img, cv::Mat& dst)
+Sharpen::Sharpen(cv::Mat& img, cv::Mat& dst)
 {
     dst = cv::Mat::zeros(img.size(), CV_32S);
     img.convertTo(mSrc, CV_32S);
