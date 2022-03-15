@@ -2,8 +2,8 @@
 // Created by 单淳劼 on 2022/3/8.
 //
 
-#ifndef GAUSSIAN_FILTER_SOBEL_H
-#define GAUSSIAN_FILTER_SOBEL_H
+#ifndef SOBEL_H
+#define SOBEL_H
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
@@ -15,6 +15,8 @@ public:
     Sobel(int gx, int gy, int kernelSize);
     int calcSobel();
     int calcSobel(cv::Mat& src, cv::Mat& dst);
+    cv::Mat getResult();
+    std::vector<cv::Mat> getGxGyResult();
 
 private:
     cv::Mat mSrc;
@@ -35,8 +37,7 @@ private:
     int calcGySobel();
     int calcGxGySobel();
 
-    cv::Mat getResult();
 };
 
 
-#endif //GAUSSIAN_FILTER_SOBEL_H
+#endif // SOBEL_H

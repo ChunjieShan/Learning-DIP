@@ -11,17 +11,21 @@
 class Canny
 {
 public:
-    Canny();
+    Canny(cv::Mat& src, cv::Mat& dst);
+    int calcGaussFilter(cv::Mat& src, cv::Mat& dst);
+    int calcSobelFilter(cv::Mat& src, cv::Mat& dst);
+    int getDirection(cv::Mat& sobelGxMat, cv::Mat& sobelGyMat);
+    int localNMS(cv::Mat& src, cv::Mat& dst);
+    int doubleThreshLink(cv::Mat& src, cv::Mat& dst, float highThresh, float lowThresh);
+    int calcCannyBorder(cv::Mat& src, cv::Mat dst, float highThresh, float lowThresh);
 
 private:
     GaussianFilter mGaussianFilter;
     Sobel mSobel;
     std::vector<float> mDirection;
+    cv::Mat mSrc;
+    cv::Mat mDst;
 
-    int calcGaussFilter(cv::Mat& src, cv::Mat& dst);
-    int calcSobelFilter(cv::Mat& src, cv::Mat& dst);
-    int getDirection(cv::Mat& sobelGxMat, cv::Mat& sobelGyMat);
-    int localNMS(cv::Mat& src, cv::Mat& dst);
 };
 
 

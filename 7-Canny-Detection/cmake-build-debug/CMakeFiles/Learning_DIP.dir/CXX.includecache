@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/histogram.cpp
+histogram.h
+/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/histogram.h
+
+/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/histogram.h
+

@@ -44,7 +44,7 @@ int GaussianFilter::calcGaussFilter(cv::Mat& src, cv::Mat& dst)
                 }
             }
 
-            dst.at<uchar>(row - h, col - w) = static_cast<uchar>(sum);
+            dst.at<int>(row - h, col - w) = static_cast<int>(sum);
         }
     }
 

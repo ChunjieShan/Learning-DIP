@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Remote Development" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Remote Host (2b803d80-168a-46c4-b331-b6471b34bf61)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/Code/Learning/2-DIP/Learning-DIP" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/7-Canny-Detection/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="惠普电脑 (4ad7309d-4a10-4e61-b7a8-07be6df732ce)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/Code/Learning/2-DIP/Learning-DIP" local="$PROJECT_DIR$/7-Canny-Detection" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/7-Canny-Detection/cmake-build-debug" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+      <paths name="惠普电脑-学校">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/rick/Code/Learning/2-DIP/Learning-DIP" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

@@ -45,6 +45,9 @@ int Sobel::calcSobel()
 int Sobel::calcSobel(cv::Mat &src, cv::Mat& dst)
 {
     mSrc = src;
+    mGxResult = cv::Mat::zeros(mSrc.size(), CV_32S);
+    mGyResult = cv::Mat::zeros(mSrc.size(), CV_32S);
+    mGxGyResult = cv::Mat::zeros(mSrc.size(), CV_32S);
     calcSobel();
 
     dst = getResult();
@@ -106,30 +109,40 @@ int Sobel::calcGySobel()
 int Sobel::calcGxGySobel()
 {
     // calculate both gx and gy
-    for (int row = 1; row < mSrc.rows; row++)
+    cv::Mat sobelMat;
+    cv::copyMakeBorder(mSrc, sobelMat, 1, 1, 1, 1, cv::BORDER_REPLICATE);
+    mSrc.convertTo(sobelMat, CV_32SC1);
+    int h = (mKernelSize - 1) / 2;
+    int w = (mKernelSize - 1) / 2;
+
+    for (int row = 1; row < sobelMat.rows; row++)
     {
-        for (int col = 1; col < mSrc.cols; col++)
+        for (int col = 1; col < sobelMat.cols; col++)
         {
             char gx = 0;
             char gy = 0;
 
-            for (int i = -mKernelSize; i <= mKernelSize; i++)
+            for (int i = -h; i <= h; i++)
             {
-                for (int j = -mKernelSize; j <= mKernelSize; j++)
+                for (int j = -w; j <= w; j++)
                 {
-                    gx += mSrc.at<char>(row + i, col + j) * mGxFilter.at<char>(mKernelSize + i, mKernelSize + j);
-                    gy += mSrc.at<char>(row + i, col + j) * mGyFilter.at<char>(mKernelSize + i, mKernelSize + j);
+//                    std::cout << sobelMat.at<int>(row + i, col + j) << std::endl;
+//                    std::cout << h + i << " " << w + j << " " << std::endl;
+                    gx += sobelMat.at<int>(row + i, col + j) * mGxFilter.at<char>(h + i, w + j);
+                    gy += sobelMat.at<int>(row + i, col + j) * mGyFilter.at<char>(h + i, w + j);
                 }
             }
 
-            mGxResult.at<char>(row, col) = gx;
-            mGyResult.at<char>(row, col) = gy;
+            mGxResult.at<int>(row, col) = gx;
+            mGyResult.at<int>(row, col) = gy;
+//            std::cout << "200\n";
         }
 
     }
 
     cv::addWeighted(mGxResult, 0.5, mGyResult, 0.5, 0, mGxGyResult);
     mGxGyResult.convertTo(mGxGyResult, CV_8UC1);
+    cv::imwrite("../sobel.png", mGxGyResult);
 
     return 0;
 }
@@ -149,6 +162,12 @@ int Sobel::genGxGyKernel()
     );
 
     return 0;
+}
+
+std::vector<cv::Mat> Sobel::getGxGyResult()
+{
+    std::vector<cv::Mat> vGxGyResult = {mGxResult, mGyResult};
+    return vGxGyResult;
 }
 
 cv::Mat Sobel::getResult()

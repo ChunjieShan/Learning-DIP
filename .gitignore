@@ -1,8 +1,0 @@
-cmake-build-debug/
-*.idea/
-
-*.jpg
-*.png
-*.DS_Store
-*.txt
-CMakeLists.txt
