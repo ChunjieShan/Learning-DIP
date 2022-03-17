@@ -6,23 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/canny.cpp
-canny.h
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/canny.h
+/home/rick/Code/Learning/2-DIP/Learning-DIP/8-OTSU/main.cpp
+otsu.h
+/home/rick/Code/Learning/2-DIP/Learning-DIP/8-OTSU/otsu.h
 
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/canny.h
-gaussian_filter.h
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/gaussian_filter.h
-sobel.h
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/sobel.h
-
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/gaussian_filter.h
-opencv2/opencv.hpp
--
-iostream
--
-
-/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/sobel.h
+/home/rick/Code/Learning/2-DIP/Learning-DIP/8-OTSU/otsu.h
 opencv2/opencv.hpp
 -
 iostream

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Remote Development" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Remote Development" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="Remote Host (2b803d80-168a-46c4-b331-b6471b34bf61)">
         <serverdata>
@@ -8,6 +8,7 @@
             <mapping deploy="/Code/Learning/2-DIP/Learning-DIP" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/8-OTSU/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/7-Canny-Detection/cmake-build-debug" />
           </excludedPaths>
         </serverdata>
@@ -30,5 +31,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

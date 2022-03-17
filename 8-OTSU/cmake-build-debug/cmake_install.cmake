@@ -1,4 +1,4 @@
-# Install script for directory: /home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection
+# Install script for directory: /home/rick/Code/Learning/2-DIP/Learning-DIP/8-OTSU
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rick/Code/Learning/2-DIP/Learning-DIP/7-Canny-Detection/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rick/Code/Learning/2-DIP/Learning-DIP/8-OTSU/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
