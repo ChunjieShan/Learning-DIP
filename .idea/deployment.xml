@@ -9,6 +9,7 @@
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/8-OTSU/cmake-build-debug" />
+            <excludedPath local="true" path="$PROJECT_DIR$/9-Interpolation/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/7-Canny-Detection/cmake-build-debug" />
           </excludedPaths>
         </serverdata>
