@@ -1,3 +1,0 @@
-/home/rick/Code/Learning/2-DIP/Learning-DIP/2-Equalize-Histogram/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/rick/Code/Learning/2-DIP/Learning-DIP/2-Equalize-Histogram/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rick/Code/Learning/2-DIP/Learning-DIP/2-Equalize-Histogram/cmake-build-debug/CMakeFiles/equal_hist.dir

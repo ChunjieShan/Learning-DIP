@@ -1,3 +1,0 @@
-/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/rick/Code/Learning/2-DIP/Learning-DIP/1-Histogram/cmake-build-debug/CMakeFiles/histogram.dir
